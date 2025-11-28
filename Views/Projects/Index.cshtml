@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TimeLogMvc.Models.Project>
+
+@{
+    ViewData["Title"] = "Projets";
+}
+
+<h1>Projets</h1>
+
+<p>
+    <a asp-controller="Projects" asp-action="Create" class="btn btn-primary">Nouveau projet</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
